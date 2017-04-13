@@ -1,3 +1,5 @@
+-- BASICS, LISTS, TUPLES
+
 -- ghci i :quit - podstawa
 var1 = "Hello"
 var2 = "World"
@@ -29,3 +31,98 @@ toPowProto x pow sum =
         else toPowProto x (pow - 1) (sum * x)
 
 toPositivePow x pow = toPowProto x (abs pow) 1
+
+-- W HASKELU NIE MA PETLI
+
+-- listy
+
+x = [1,2,3]
+y = 4 : x-- laczenie list y zawiera 4 eleemnty
+
+-- string to lista znakow
+str = "abcd"
+str2 = 'a':'b':'c':'d':[] -- '' uzywamy do charow
+
+-- FUNKCJE I WSZYSTKIE WYRAZENIA ZWIAJA SIE OD KONCA
+-- DLATEGO POWYZEJ DAJEMY NAJPIERW TABLICE A POTEM WSTAWIAMY DO NIEJ ELEMENTY
+-- OSTATNIM ARGUMENTEM : musi byc tablica
+
+str_res = str == str2 -- true
+
+-- ++ - konkatenacja
+-- STRING TO TABLICA CHAROW
+
+tab = y ++ [7,8,9] -- [4,1,2,3,7,8,9]
+
+-- LISTY MUSZA MIEC 1 TYP ELEMENTOW
+-- asd = ["asd",23, 42.2]  -- nie mozna
+
+-- nie mozna 2 razy przypisac do tego samego
+--x = [1,2,3]
+t = [1,2,3]
+ht = head t -- 1
+tt = tail t --2,3
+
+-- null sprawdza obecnosc elementow!
+null_empty_arr = null [] --true
+null_full_arr = null [2,3] --false
+
+-- ITERACJA PO ELEMENTACH FUNKCJI POLEGA NA WYKONYWANIU OPERACJI NA 1 ELEMENCIE - HEAD
+-- I PRZEKAZYWANIU REKURENCYJNIE RESZTY ELEMENTOW, A POTEM WRACAJAC SKLADANIU ICH W LISTE
+-- DLATEGO NA KONCU GDY NULL ZWARACAMY THEN I MAMY 1_st : 2_nd : ... : n_th-1 : nt_th : []
+double_numbers numbers =
+    if null numbers
+    then []
+    else (2 * (head numbers)) : (double_numbers (tail numbers))
+
+--usuwanie elementow nieparzystych
+-- mod WARTOSC MODULO
+remove_even list =
+    if null list
+    then []
+    else if (mod (head list) 2) == 1
+        then (head list) : (remove_even(tail list))
+        else remove_even(tail list)
+
+
+-- TUPLES
+tuple = (1, "asd", 2.32, [1,2,3]) -- moga trzymac rozne typy
+
+return_tuple list = ((head list), (length list))
+
+res_tuple = return_tuple [1,23,57] -- (1,3)
+-- fst i snd pozwalaja odwolywac sie do elementow tupli
+first_tuple_part = fst res_tuple -- 1
+second_tuple_part = snd res_tuple -- 3
+-- POWYZSZE METODY DZIALAJA DLA TUPLI 2 ELEMENTOWYCH
+
+-- LEPIEJ NIE NADUZYWAC TUPLI
+
+-- patter mathing - access do tupli i list
+
+-- sugerujemy ze input to tuple i wybieramy element - troche taka destrukturyzacja
+fst' (a,b,c,d) = a
+trd' (a,b,c,d) = c
+
+trd_l [a,b,c] = c
+
+-- PATTERN MATCHING DZIALA TYLKO DLA DOKLADNIEJ ILOSCI ZADEKLAROWANYCH ELEMENTOW
+
+head' (h: rest) = h
+head' [] = error "list is empty"
+tail' (h: rest) = rest
+tail' [] = error "list is empty"
+
+-- Funkcje z (:) obsluguja listy
+-- mozna deklarowac funkcje kilka razy z roznymi formatami patternow i beda wtedy obslugiwaly rozne przypadki
+
+null' [] = True
+null' (x: rest) = False
+
+-- remove_even  na tuplach
+
+remove_even_tuple [] = []
+remove_even_tuple (x : xs) =
+    if (mod x 2) == 1
+        then x : (remove_even_tuple xs)
+        else remove_even_tuple xs
