@@ -1,4 +1,4 @@
--- BASICS, LISTS, TUPLES
+-- BASICS, LISTS, TUPLES, GUARDS, CASES, PATTERN MATCHING, LAZY EVALUATION, LET IN
 
 -- ghci i :quit - podstawa
 var1 = "Hello"
@@ -126,3 +126,70 @@ remove_even_tuple (x : xs) =
     if (mod x 2) == 1
         then x : (remove_even_tuple xs)
         else remove_even_tuple xs
+
+-- guardsy - pozwalaja na unikniecie ifow! OTHERWISE JEST JAK DEFAULT W SWITCHU
+
+double_list_alt list
+    | null list = []
+    | otherwise = (2 * (head list)) : double_list_alt (tail list)
+
+-- remove odd dla odmiany
+
+remove_odd [] = []
+remove_odd (x : end)
+    | (mod x 2) == 0 = x : (remove_odd end)
+    | otherwise = remove_odd(end)
+
+--  case - to alternatywa dla guardow
+
+double_list_case list = case list of
+    []      ->  []
+    (x: t)  ->  (x * 2) : (double_list_case t)
+
+-- wykorzystanie remove odd w celu stwierdzenia czy lista zawiera jakiekolwiek parzyste  elementy
+
+containsEven list = case (remove_odd list) of
+    []          ->  False
+    (x : rest)  ->  True
+
+--  nie mozna uzywac case i guarda naraz :((
+
+-- lokalne zmienne zapisujemy z letem - zmienne sa niezmienne! zmienne mozna tylko tworzyc w scopie -np funkcji
+
+fun =
+    let a = 5
+        b = 4
+    in a + b -- zwroci 9
+
+--let zawsze wystepuje z in
+
+countEven list =
+    let even = remove_odd list
+    in ((length even), (length list))
+
+
+-- where binding pozwala nam dawac wartosci domyslne do funkcji
+
+testWhere = 2*a
+    where a = 5
+
+-- where srednio ma sens
+
+-- LAZY EVAL
+
+-- W HASKELU FUNKCJE SA WYWOLYWANE TYLKO JESLI ZOSTANA UZYTE WARTOSCI KOTRE MAJA WYWOLAC
+
+--Tworzenie nieskonczonej listy
+createInfiniteList n = n : createInfiniteList(n+1)
+
+infiniteList = createInfiniteList 1
+--haskel moze spokojnie operowac na jej elementach bez ewaluowania calosci
+
+part = take 10 infiniteList
+-- takie wywolanie zewaluuje tylko 10 elementow
+-- wywolania tail albo length sprawia ze program wpadnie w nieskonczona petle
+
+infiniteOdd = remove_even infiniteList
+
+partOdd = take 10 infiniteOdd -- TO TEZ ZADZIALA!! haskel wywoluje leniwie funkcje i wywola remove_even tylko na tylu
+-- elementach by spelnic wymaganie take 10!
