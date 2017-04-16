@@ -13,6 +13,9 @@ instance ShowEq Test where
 
 test = Test "Niezapominajka"
 
-eqTest = test Prelude.== (Test "Niezapominajka")
+eqTest = test Main.== (Test "Niezapominajka")
+-- Main odnosi sie do tego co ejst deklarowane tutaj
+-- Prelude.show test zwroci - "Test \"Niezapominajka\""
+-- Main.show test zwroci - "NOWY TYP O WARTOSCI: \"Niezapominajka\""
 
 -- pojebane sa te namespacy Prelude i Mian gryza sie
