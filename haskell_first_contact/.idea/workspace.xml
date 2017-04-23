@@ -25,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="types.hs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="types.hs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/types.hs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="785">
@@ -75,6 +75,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="io_fun_string_parsing.hs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/io_fun_string_parsing.hs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="io2.hs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/io2.hs">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,6 +107,7 @@
         <option value="$PROJECT_DIR$/classes2.hs" />
         <option value="$PROJECT_DIR$/io.hs" />
         <option value="$PROJECT_DIR$/io2.hs" />
+        <option value="$PROJECT_DIR$/io_fun_string_parsing.hs" />
       </list>
     </option>
   </component>
@@ -149,6 +160,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../haskell_modules" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Stuff\Git\haskellFun\haskell_first_contact" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -256,16 +272,15 @@
       <workItem from="1492206495555" duration="6498000" />
       <workItem from="1492259376026" duration="21216000" />
       <workItem from="1492884267329" duration="5148000" />
-      <workItem from="1492896820074" duration="947000" />
+      <workItem from="1492896820074" duration="2209000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46256000" />
+    <option name="totallyTimeSpent" value="47518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895616" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -462,14 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/io.hs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/io2.hs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -482,6 +489,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
           <caret line="121" column="70" lean-forward="false" selection-start-line="121" selection-start-column="70" selection-end-line="121" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/io.hs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/io_fun_string_parsing.hs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding />
         </state>
       </provider>
